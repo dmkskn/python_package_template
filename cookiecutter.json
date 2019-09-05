@@ -1,0 +1,13 @@
+{
+    "name": "Hello World",
+    "slug": "{{ cookiecutter.name.lower().replace(' ', '_').replace('-', '_') }}",
+    "author": "John Doe",
+    "email": "john@doe.com",
+    "github_username": "johndoe",
+    "description": "Initial Description.",
+    "use_pypi_deployment_with_travis": "y",
+    "license": [
+        "MIT",
+        "The Unlicense"
+    ]
+}

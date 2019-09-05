@@ -1,0 +1,20 @@
+language: python
+python:
+  - "3.6"
+  - "3.7"
+cache: pip
+install: "make"
+script: make ci
+notifications:
+  on_success: change
+  on_failure: always
+{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
+deploy:
+  on:
+    tags: true
+  provider: script
+  skip_cleanup: true
+  script: poetry publish -u $PYPI_USERNAME -p $PYPI_PASSWORD
+  # ADD SECURE $PYPI_USERNAME AND $PYPI_PASSWORD
+{%- endif %}
+
